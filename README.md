@@ -12,3 +12,5 @@ In this demo, Grid is bind with data from Custom Adaptor which is created as a c
 * Open the solution file using the Visual Studio 2022.
 * Restore the NuGet packages by rebuilding the solution.
 * Run the project.
+
+N> Ensure to modify the path of NORTHWIND.MDF in OrderContext.cs based on your local path, before running the sample.
