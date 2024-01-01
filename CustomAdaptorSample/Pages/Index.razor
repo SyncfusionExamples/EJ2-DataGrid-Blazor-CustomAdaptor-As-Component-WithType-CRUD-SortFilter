@@ -1,0 +1,19 @@
+﻿@page "/"
+
+@using CustomAdaptorSample.Data
+@inject OrderDataAccessLayer Ord;
+
+
+<SfGrid TValue="Order" ID="Grid" AllowSorting="true" AllowFiltering="true" AllowPaging="true" Toolbar="@(new List<string>() { "Add", "Delete", "Update", "Cancel" })">
+    <SfDataManager Adaptor="Adaptors.CustomAdaptor">
+        <TestService></TestService>
+    </SfDataManager>
+    <GridPageSettings PageSize="8"></GridPageSettings>
+    <GridEditSettings AllowEditing="true" AllowDeleting="true" AllowAdding="true" Mode="@EditMode.Normal"></GridEditSettings>
+    <GridColumns>
+        <GridColumn Field=@nameof(Order.OrderID) IsIdentity="true" HeaderText="Order ID" IsPrimaryKey="true" TextAlign="@TextAlign.Center" Width="140"></GridColumn>
+        <GridColumn Field=@nameof(Order.CustomerID) HeaderText="Customer Name" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.EmployeeID) HeaderText="Employee ID" TextAlign="@TextAlign.Center" Width="140"></GridColumn>
+    </GridColumns>
+</SfGrid>
+
